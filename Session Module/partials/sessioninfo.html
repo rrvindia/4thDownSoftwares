@@ -1,0 +1,7 @@
+<div ng-controller="SessionInfoCtrl as sessionInfo">
+    <div class="heading_profile">
+        <span>{{sessionData.sessionLabel}}</span><br> {{sessionData.startDate | date: 'EEEE, MMMM dd, yyyy h:mm a'}} - {{sessionData.endDate  | date: 'EEEE, MMMM dd, yyyy h:mm a'}}
+    </div>
+    <div class="clr_both"></div>
+    <div class="deti_profile mrgin_top border-btm">{{sessionData.description}}</div>
+</div>

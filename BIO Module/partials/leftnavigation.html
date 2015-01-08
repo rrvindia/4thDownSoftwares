@@ -1,0 +1,25 @@
+<div class="list-group listprofile_pg" ng-controller="LeftNavigationCtrl as leftNavCtrl">
+        <div class="list-group-item remove_borderradius dark_background">
+            <div class="input-group">
+                <span class="input-group-addon glyphicon glyphicon-search" style="top:0px;"></span>
+                <input type="text" class="form-control" placeholder="Search" ng-model="query" autofocus>
+            </div>
+        </div>
+    <div id="divUserList" class="scroller_box">
+        <div ng-repeat="item in Users | userFilter: query | orderBy: 'last' | limitTo: dataLimit">
+            <a ng-click="leftNavCtrl.gotoUserDetails(item.id)" style="cursor:pointer;" id="lnk{{item.id}}" class="list-group-item list-group-item_DecreasePd">
+                <div class="profile_viewimag">
+                    <div class="img_wdh">
+                        <img ng-src="profile_img/{{item.id}}.jpg" onError="this.src='profile_img/user_0.jpg'" id="{{item.id}}" alt="image" style="height:50px;weight:55px;">
+                    </div>
+                    <div class="profile_details">
+                        {{item.first}} <b> {{item.last}}</b><br>
+                        <span ng-bind="item.role"></span>
+                    </div> 
+                </div>
+                <div class="clr_both"></div>
+            </a>
+        </div>
+        <div class="norecordfound" ng-show="query.length > 0 && (Users | userFilter : query).length == 0 || Users.length==0">No record found!</div>
+    </div>
+</div>

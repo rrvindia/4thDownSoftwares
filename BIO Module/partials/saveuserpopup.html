@@ -1,0 +1,17 @@
+<div class="savepopup" id="divDialog">
+	<div class="popu_box_HeadingName">
+		<div class="img_popup_radius">
+			<img ng-src="{{imageUrl}}" onError="this.src=\'profile_img/user_0.jpg\'" alt="image">
+		</div>
+		<div class="profileName_popup">
+			<p>{{currentUserDetails.first}}</p>Notes<br/>
+		</div>
+	</div>
+	<div class="saveLink_popup">
+		<a href="" ng-click="saveNotes(userId)">Save</a>
+	</div>
+	<div class="clr_both"></div>
+	<div class="Txt_areaBox">
+		<textarea class="txtNotes" rows="6" cols="40" ng-model="userNotes"></textarea>
+	</div>
+</div>

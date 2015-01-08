@@ -1,0 +1,70 @@
+<div ng-controller="SpeakerCtrl as speaker">
+    <div speaker class="deti_profile border-btm clearfix">
+        <h2 class="spker">Speakers</h2>
+        <div class="clr_both"></div>
+        <div ng-repeat="slide in slides" class="slide slide-animation nonDraggableImage"
+                 ng-swipe-right="speaker.nextSlide()" ng-swipe-left="speaker.prevSlide()" 
+                 ng-hide="!isCurrentSlideIndex($index)">
+            <div class="col-50 floatL">
+                <a class="nodecoration" ng-click="speaker.showUserDetails(slide[0].id)">
+                    <div class="clearfix">
+                        <div class="image-area  img_popup_radius">
+                            <img ng-src="profile_img/{{slide[0].id}}.jpg" onError="this.src='profile_img/user_0.jpg'" alt="image" class="imagearea" >
+                        </div>
+                        <div class="text-title">
+                            <h1> {{slide[0].first}} {{slide[0].last}}</h1>
+                            <span>{{slide[0].role}}</span>
+                        </div>
+                    </div>
+                </a>
+               <a class="nodecoration" ng-click="speaker.showUserDetails(slide[1].id)" ng-show="slide[1].id!= undefined">
+                    <div class="clearfix">
+                        <div class="image-area">
+                            <img ng-src="profile_img/{{slide[1].id}}.jpg" onError="this.src='profile_img/user_0.jpg'" alt="image" class="imagearea" >
+                        </div>
+                            <div class="text-title">
+                                <h1> {{slide[1].first}} {{slide[1].last}}</h1>
+                                <span>{{slide[1].role}}</span>
+                            </div>
+                    </div>
+                </a>
+            </div>
+            <div>
+                <div class="col-50 floatR">
+                    <a class="nodecoration" ng-click="speaker.showUserDetails(slide[2].id)" ng-show="slide[2].id!= undefined">
+                        <div class="clearfix">
+                            <div class="image-area">
+                                <img ng-src="profile_img/{{slide[2].id}}.jpg" alt="image" onError="this.src='profile_img/user_0.jpg'" class="imagearea">
+                            </div>
+                            <div class="text-title">
+                                <h1> {{slide[2].first}} {{slide[2].last}}</h1>
+                                    <span>{{slide[2].role}}</span>
+                            </div>
+                        </div>
+                    </a>            
+                     <a class="nodecoration" ng-click="speaker.showUserDetails(slide[3].id)" ng-show="slide[3].id!= undefined">
+                        <div class="clearfix">
+                            <div class="image-area">
+                                <img ng-src="profile_img/{{slide[3].id}}.jpg" alt="image" onError="this.src='profile_img/user_0.jpg'" class="imagearea">
+                            </div>
+                            <div class="text-title">
+                                <h1> {{slide[3].first}} {{slide[3].last}}</h1>
+                                    <span>{{slide[3].role}}</span>
+                            </div>
+                        </div>
+                    </a>            
+                </div>
+            </div>
+        </div>
+        <nav class="nav">
+            <div class="wrapper">
+                <ul class="dots" style="clear:both;">
+                    <li class="dot" ng-repeat="slide in slides">
+                        <a href="#" ng-class="{'active':isCurrentSlideIndex($index)}"
+                           ng-click="setCurrentSlideIndex($index);"></a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="slide-arrow clearfix"></div>
+    </div>
+</div>

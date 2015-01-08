@@ -1,0 +1,8 @@
+<div map class="map-area clearfix" ng-controller="MapsCtrl as map">
+    <h2 class="spker">Map</h2>
+    <div class="roomselector">
+		<div id="divRoomName" class="roomlabel"></div>
+        <select ng-model="RoomName" id="drpRoomSelector" ng-init="RoomName = Rooms[0]" class="cust" ng-options="room.label for room in Rooms" ng-change="changeRoom()"></select>
+    </div>
+    <div class="map-field"><div id="inline-view" ng-model="zoomerImage" /></div>
+</div>

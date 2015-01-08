@@ -1,0 +1,39 @@
+<div class="section-popup">
+    <div class="back-btn">
+        <a href="#" class="ngdialog-close">Back</a>
+    </div>
+    <div class="Complete_profile_deatils">
+        <div class="lft_smallbox">
+            <div class="lrg_img">
+                <img ng-src="profile_img/{{userId}}.jpg" onError="this.src='profile_img/user_0.jpg'" alt="image">
+            </div>
+            <div class="rating_makeconnection">
+                <span class="glyphicon glyphicon-star-empty"></span>
+                <div id="curUID" class="hide">{{userId}}</div>
+                <a href="#" class="nodecoration" ng-click="makeConnection(this)" id="lnkConnection">{{connectionStatus}}</a>
+            </div><div class="rating_makeconnection">
+            <span class="glyphicon glyphicon-paperclip"></span>
+            <a href="#" class="nodecoration" ng-click="addNotes()" id="lnkNotes">{{userNoteLabel}}</a></div>
+            <div class="clr_both"></div>
+        </div><div class="Right_smallbox">
+        <div class="heading_profile"><span>{{userName}}</span><br>{{userRole}}</div>
+        <div class="str_icon">
+            <img id="imgConnection" src="{{star}}" />
+        </div>
+        <div class="clr_both"></div>
+        <div class="deti_profile mrgin_top">{{bio}}</div>
+        </div>
+        <div class="clr_both"></div>
+        <div class="note_bottomDetails" id="divNotes">
+            <div class="deti_profile_note">
+                <img src="img/note_icon.jpg" width="16" height="12"> Notes</div>
+            <div class="saveLink_popup" id="divSave">
+                <a href="#" ng-click="saveNotes(userId)">Save</a>
+            </div>
+            <div class="clr_both"></div>
+            <div class="deti_profile">
+                <textarea id="txtNotes" class="txtNotes" rows="6" cols="40" readonly="true" ng-model="userNotes" onblur="$(document).scrollTop(0);"></textarea>
+            </div>
+        </div>
+    </div>
+</div>

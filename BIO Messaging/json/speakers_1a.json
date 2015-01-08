@@ -1,0 +1,20 @@
+{
+    "S01_1": {
+        "speakers": ["user_70","user_75"]
+        },
+    "S01_2": {
+        "speakers": ["user_1","user_81","user_86"]
+        },
+    "S02_1": {
+        "speakers": ["user_80","user_81","user_86"] 
+        },
+    "S02_2": {
+        "speakers": ["user_105","user_108","user_210"]
+        },
+    "S03_1": {
+        "speakers": ["user_336","user_458"]
+        },
+    "S03_2": {
+        "speakers": ["user_522","user_561","user_682"]
+        }
+}

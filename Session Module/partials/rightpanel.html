@@ -1,0 +1,18 @@
+    <div class="right-sec">
+        <h1>Who's Here</h1>
+        <div class="userlist"  id="userlist"  ng-controller="NearByCtrl as nearby">
+            <ul>
+                <li class="clearfix" ng-repeat="item in NearByUsers | limitTo: dataLimit">
+                    <a ng-click="nearby.showUserDetails(item.id)" class="nodecoration" id="lnk{{item.id}}">
+                        <div class="image-area"><img ng-src="profile_img/{{item.id}}.jpg" onError="this.src='profile_img/user_0.jpg'" id="{{item.id}}" alt="image" class="imagearea"></div>
+                        <div class="text-title">
+                            <h1>{{item.first}}  {{item.last}}</h1>
+                            <span ng-bind="item.role"></span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="tap-con">tap to connect</div>
+    </div>
+<div class="clr_both"></div>

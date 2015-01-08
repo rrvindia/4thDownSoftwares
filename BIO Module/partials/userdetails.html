@@ -1,0 +1,50 @@
+<div id="divSelectContact" style="margin-left: 35%;margin-top: 35%;font-size: 35px;color: lightgray;font-family: sans-serif;">Please select a contact</div>
+<div class="Complete_profile_deatils" ng-switch="{{isConnected}}">
+    <div class="lft_smallbox">
+        <div class="lrg_img">
+            <img ng-src="{{imageUrl}}" onError="this.src='profile_img/user_0.jpg'" alt="image" style="height:130px;weight:125px;">
+        </div>
+        <div class="rating_makeconnection" ng-switch-when="true"> 
+            <span class="glyphicon glyphicon-star-empty"></span> 
+            <a id="lnkMakeConnection" href="" ng-click="userCtrl.MakeConnection(currentUserDetails.id)">Remove Connection</a>
+        </div>
+        <div class="rating_makeconnection" ng-switch-when="false"> 
+            <span class="glyphicon glyphicon-star-empty"></span> 
+            <a id="lnkMakeConnection" href="" ng-click="userCtrl.MakeConnection(currentUserDetails.id)">Make Connection</a>
+        </div>
+        <div class="rating_makeconnection"> 
+            <span class="glyphicon glyphicon-paperclip"></span> 
+            <a href="" ng-click="userCtrl.openNotify()" id="lnkNotes">Add Notes</a>
+        </div>
+        <div class="clr_both"></div>
+    </div>
+    <div class="heading_profile">
+        <span>{{currentUserDetails.first + " " + currentUserDetails.last}}</span>
+        <p>{{currentUserDetails.role}}</p>
+        <p>{{currentUserDetails.description.functional_area}}</p>
+    </div>
+    <div class="str_icon" ng-switch-when="false">
+        <img src="img/Star-white.png" id="imgStar">
+    </div>
+    <div class="Right_smallbox">
+        
+        <div class="str_icon" ng-switch-when="true">
+            <img src="img/Star.png" id="imgStar">
+        </div>
+        <div class="clr_both"></div>
+        <div class="deti_profile mrgin_top">
+            <p class="email">{{currentUserDetails.description.email}}</p>
+
+            <h2>Franchise:</h2>
+            <p>{{currentUserDetails.description.franchise}}</p>
+            <h2>Fun Fact:</h2>
+            <p>{{currentUserDetails.description.fun_fact}}</p>
+
+        </div>
+    </div>
+    <div class="clr_both"></div>
+    <div id="divnotesection" class="note_bottomDetails hide">
+        <div class="deti_profile_note"><img src="img/note_icon.jpg" width="16" height="12"> Notes</div>
+        <textarea class="div_notes notesarea" readonly></textarea>
+    </div>
+</div>

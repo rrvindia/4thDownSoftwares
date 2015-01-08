@@ -1,0 +1,12 @@
+<div>
+    <div style="float: left;width: 90px;" ng-click="goToRoot()">
+        <img src="img/BackArrow.ico" alt="back" style="float:left;" height="30px" width="30px"/>
+        <div class="text_back">Back</div>
+    </div>
+    <div class="btn-group top_header_button scope-bar">   
+        <button id="btnAttendees" type="button" class="btn btn-default btn-default_hover Selected_Tab" ng-click="getAllUsers()">Attendees</button>
+        <button id="btnSpeakers" type="button" class="btn btn-default btn-default_hover" ng-click="getSpeakerUsers()">Speakers</button>
+        <button id="btnConnections" type="button" class="btn btn-default btn-default_hover" ng-click="getUserForConnection()">Connections</button>
+        <button id="btnNearBy" type="button" class="btn btn-default btn-default_hover" ng-click="getUserForMatchingDevice()">Near By</button>
+    </div>
+</div>

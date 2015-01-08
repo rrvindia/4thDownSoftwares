@@ -1,0 +1,34 @@
+#inline-view {
+            position: absolute;
+            margin: 0;
+            width: 452px;
+            height: 245px;
+            border:0px solid red;
+            
+        }
+
+        #full-view {
+        	position: absolute;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        img.leaflet-tile
+        {
+        outline: 1px solid transparent;
+        }
+
+        .leaflet-container {background: none;}
+
+        @-webkit-keyframes zoomInPhoto{
+            0% {-webkit-transform: scale(.4); opacity:0;}
+            50% {-webkit-transform: scale(1); opacity:1;}
+            90% {-webkit-transform: scale(1); opacity:1;}
+            100% {-webkit-transform: scale(1); opacity:1;}
+        }
+
+        @-webkit-keyframes slideDown {
+            0% { -webkit-transform: translateY(-100%) ; opacity:0;}
+            100% {-webkit-transform: translateY(0%); opacity: 1;}   
+        }

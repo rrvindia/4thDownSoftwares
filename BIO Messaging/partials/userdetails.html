@@ -1,0 +1,61 @@
+<div id="divSelectContact" style="margin-left: 35%;margin-top: 35%;font-size: 35px;color: lightgray;font-family: sans-serif;">Please select a contact</div>
+<div class="Complete_profile_deatils">
+    <div class="lft_smallbox">
+        <div class="lrg_img"><img ng-src="{{imageUrl}}" onError="this.src='profile_img/user_0.jpg'" width="125" height="129"></div>
+            <h2>{{currentUserDetails.first + " " + currentUserDetails.last}}</h2> 
+            <span>{{currentUserDetails.role}}</span>
+        <div class="rating_makeconnection">
+            <span class="connection">
+                <img id="imgConnection" src="img/Star-white.png">
+            </span>
+            <a id="lnkConnection" ng-click="makeConnection(currentUserDetails.id)">Make Connection</a>
+        </div>
+        <div class="menu-vertical">
+            <ul>
+                <li><a id="lnkBio" class="link_selected" ng-click="ShowSection('Biography')"><span class="lnk_span">Biography</span></a></li>
+                <li><a id="lnkNotes" ng-click="ShowSection('Notes')"><span>Notes</span></a></li>
+                <li><a id="lnkMsg" ng-click="ShowSection('Messages')"><span>Message</span></a></li>
+            </ul>
+        </div>
+        <div class="clr_both"></div>
+    </div>
+    <div class="message-box" ng-show="Messages">
+        <div class="message-block" id="divMessage">
+
+        </div>
+        <div class="msg-type">
+            <input name="" type="text" ng-model="textMessage" class="input" placeholder="Message">
+            <input name="" ng-click="AddMessage()" ng-disabled="!textMessage" type="button" value="Send" class="send">
+        </div>
+    </div>
+    <div class="message-box"  ng-show="Biography">
+        <div class="message-block">
+            <div class="clr_both"></div>
+            <div class="deti_profile mrgin_top">
+                {{currentUserDetails.description.email}}
+                <div class="brakeline"></div>
+                {{currentUserDetails.description.group_name}}
+                <div class="brakeline"></div>
+                {{currentUserDetails.description.bio}}
+            </div>
+        </div>
+    </div>
+    <div class="message-box" ng-show="Notes">
+        <div class="message-block">
+            <a class="nodecoration" ng-click="addNotes()" id="lnkNote">Add Notes</a>
+            <div class="note_bottomDetails hide" id="divNotes">
+                <div class="deti_profile_note">
+                    <img src="img/note_icon.jpg" width="16" height="12"> Notes
+                </div>
+                <div class="saveLink_popup" id="divSave">
+                    <a ng-click="saveUserNote(currentUserDetails.id)">Save</a>
+                </div> 
+                <div class="clr_both"></div>
+                <div class="deti_profile">
+                    <textarea id="txtNotes" class="txtNotes" rows="6" cols="40" readonly="true"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clr_both"></div>
+</div>
